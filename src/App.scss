@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
+
+// Variables;
+$purple-color: #7541c8;
+$gray-color: #48556a;
+$white-color: #ffffff;
+$dark-color: #19212e;
+
+// Basic reset;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+
+  @media (min-width: 1500px) {
+    font-size: 13px;
+  }
+
+  @media (max-width: 1000px) {
+    font-size: 8.5px;
+  }
+
+  body {
+    font-family: "Lato", "Helvetica Neue";
+    font-size: 1.6rem;
+  }
+}
+
+// Main container;
+.App {
+  max-width: 1980px;
+  width: 95%;
+  padding: 0 2rem;
+  margin: 5rem auto;
+
+  .testimonials {
+    display: grid;
+    grid-template-areas:
+      "one one one two three"
+      "four five five five three"
+      "six six six seven eight"
+      "nine nine ten ten eight";
+    gap: 3rem;
+
+    @media (max-width: 800px) {
+      grid-template-areas: 
+      "one"
+      "two"
+      "three"
+      "four"
+      "five"
+      "six"
+      "seven"
+      "eight"
+      "nine"
+      "ten";
+    }
+
+    &-card {
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 6px $dark-color;
+      transition: .4s;
+
+      &:hover {
+        transform: scale(1.02);
+      }
+
+      &:nth-child(1) {
+        grid-area: one;
+        background-color: $purple-color;
+      }
+
+      &:nth-child(2) {
+        grid-area: two;
+        background-color: $gray-color;
+      }
+
+      &:nth-child(3), &:nth-child(4) {
+        background-color: $white-color;
+
+        figcaption {
+          color: $dark-color;
+        }
+
+        .testimonials-card-text {
+          color: $dark-color;
+
+          blockquote {
+            color: #48556a;
+          }
+        }
+      }
+
+      &:nth-child(3) {
+        grid-area: three;
+      }
+
+      &:nth-child(4) {
+        grid-area: four;
+      }
+
+      &:nth-child(5) {
+        grid-area: five;
+        background-color: $dark-color;
+      }
+
+      &:nth-child(6) {
+        grid-area: six;
+        background-color: blue;
+      }
+
+      &:nth-child(7) {
+        grid-area: seven;
+        background-color: #a56e43;
+      }
+
+      &:nth-child(8) {
+        grid-area: eight;
+        background-color: #2fa1c4;
+      }
+
+      &:nth-child(9) {
+        grid-area: nine;
+        background-color: #333;
+      }
+
+      &:nth-child(10) {
+        grid-area: ten;
+        background-color: #7c5f59;
+      }
+
+      &-details {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        
+        figcaption {
+          color: #fff;
+        }
+      }
+
+      &-text {
+        font-size: 1.7rem;
+        font-weight: bold;
+        color: $white-color;
+
+        blockquote {
+          font-size: 1.5rem;
+          padding: 1rem 1rem 0 1rem;
+          color: #ccc;
+        }
+      }
+
+      img {
+        width: 6rem;
+        height: 6rem; 
+        border-radius: 50%;
+      }
+    }
+  }
+}
